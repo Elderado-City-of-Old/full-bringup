@@ -3,6 +3,10 @@
 # Links packages in this repo to a provided catkin workspace's source directory.
 # Thomas Herring 2019
 
+
+# Downloads the submodules before linking.
+git submodule update --init --recursive
+
 dir=$(pwd)
 
 if [ -z "$1" ]
