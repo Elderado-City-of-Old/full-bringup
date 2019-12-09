@@ -16,9 +16,9 @@
 
 /* Authors: Yoonseok Pyo */
 
-#include <turtlebot3_fake/turtlebot3_fake.h>
+#include <oro_fake/oro_fake.h>
 
-Turtlebot3Fake::Turtlebot3Fake()
+OroFake::OroFake()
 : nh_priv_("~")
 {
   //Init fake turtlebot node
@@ -26,18 +26,18 @@ Turtlebot3Fake::Turtlebot3Fake()
   ROS_ASSERT(init_result);
 }
 
-Turtlebot3Fake::~Turtlebot3Fake()
+OroFake::~OroFake()
 {
 }
 
 /*******************************************************************************
 * Init function
 *******************************************************************************/
-bool Turtlebot3Fake::init()
+bool OroFake::init()
 {
   // initialize ROS parameter
 
-  std::string robot_model = nh_.param<std::string>("tb3_model", "");
+  std::string robot_model = nh_.param<std::string>("oro_model", "");
 
   if (!robot_model.compare("burger"))
   {
@@ -97,7 +97,7 @@ bool Turtlebot3Fake::init()
   odom_pub_         = nh_.advertise<nav_msgs::Odometry>("odom", 100);
 
   // initialize subscribers
-  cmd_vel_sub_  = nh_.subscribe("cmd_vel", 100,  &Turtlebot3Fake::commandVelocityCallback, this);
+  cmd_vel_sub_  = nh_.subscribe("cmd_vel", 100,  &OroFake::commandVelocityCallback, this);
 
   prev_update_time_ = ros::Time::now();
 
@@ -107,7 +107,7 @@ bool Turtlebot3Fake::init()
 /*******************************************************************************
 * Callback function for cmd_vel msg
 *******************************************************************************/
-void Turtlebot3Fake::commandVelocityCallback(const geometry_msgs::TwistConstPtr cmd_vel_msg)
+void OroFake::commandVelocityCallback(const geometry_msgs::TwistConstPtr cmd_vel_msg)
 {
   last_cmd_vel_time_ = ros::Time::now();
 
@@ -121,7 +121,7 @@ void Turtlebot3Fake::commandVelocityCallback(const geometry_msgs::TwistConstPtr 
 /*******************************************************************************
 * Calculate the odometry
 *******************************************************************************/
-bool Turtlebot3Fake::updateOdometry(ros::Duration diff_time)
+bool OroFake::updateOdometry(ros::Duration diff_time)
 {
   double wheel_l, wheel_r; // rotation value of wheel [rad]
   double delta_s, delta_theta;
@@ -182,7 +182,7 @@ bool Turtlebot3Fake::updateOdometry(ros::Duration diff_time)
 /*******************************************************************************
 * Calculate the joint states
 *******************************************************************************/
-void Turtlebot3Fake::updateJoint(void)
+void OroFake::updateJoint(void)
 {
   joint_states_.position[LEFT]  = last_position_[LEFT];
   joint_states_.position[RIGHT] = last_position_[RIGHT];
@@ -193,7 +193,7 @@ void Turtlebot3Fake::updateJoint(void)
 /*******************************************************************************
 * Calculate the TF
 *******************************************************************************/
-void Turtlebot3Fake::updateTF(geometry_msgs::TransformStamped& odom_tf)
+void OroFake::updateTF(geometry_msgs::TransformStamped& odom_tf)
 {
   odom_tf.header = odom_.header;
   odom_tf.child_frame_id = odom_.child_frame_id;
@@ -206,7 +206,7 @@ void Turtlebot3Fake::updateTF(geometry_msgs::TransformStamped& odom_tf)
 /*******************************************************************************
 * Update function
 *******************************************************************************/
-bool Turtlebot3Fake::update()
+bool OroFake::update()
 {
   ros::Time time_now = ros::Time::now();
   ros::Duration step_time = time_now - prev_update_time_;
@@ -242,14 +242,14 @@ bool Turtlebot3Fake::update()
 *******************************************************************************/
 int main(int argc, char* argv[])
 {
-  ros::init(argc, argv, "turtlebot3_fake_node");
-  Turtlebot3Fake tb3fake;
+  ros::init(argc, argv, "oro_fake_node");
+  OroFake orofake;
 
   ros::Rate loop_rate(30);
 
   while (ros::ok())
   {
-    tb3fake.update();
+    orofake.update();
     ros::spinOnce();
     loop_rate.sleep();
   }

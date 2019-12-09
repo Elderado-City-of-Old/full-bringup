@@ -2,7 +2,7 @@
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
 cmake_minimum_required(VERSION 2.8.3)
-project(turtlebot3_gazebo)
+project(oro_gazebo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -54,14 +54,14 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
-add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
-add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_executable(oro_drive src/oro_drive.cpp)
+add_dependencies(oro_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(oro_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS turtlebot3_drive
+install(TARGETS oro_drive
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

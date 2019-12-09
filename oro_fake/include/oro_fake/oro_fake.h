@@ -16,8 +16,8 @@
 
 /* Authors: Yoonseok Pyo */
 
-#ifndef TURTLEBOT3_FAKE_H_
-#define TURTLEBOT3_FAKE_H_
+#ifndef ORO_FAKE_H_
+#define ORO_FAKE_H_
 
 #include <math.h>
 
@@ -32,9 +32,9 @@
 #include <tf/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
 
-#include <turtlebot3_msgs/SensorState.h>
+#include <oro_msgs/SensorState.h>
 
-#include "turtlebot3_fake.h"
+#include "oro_fake.h"
 
 #define WHEEL_RADIUS                    0.033     // meter
 
@@ -55,11 +55,11 @@
 #define TORQUE_ENABLE                   1       // Value for enabling the torque of motor
 #define TORQUE_DISABLE                  0       // Value for disabling the torque of motor
 
-class Turtlebot3Fake
+class OroFake
 {
  public:
-  Turtlebot3Fake();
-  ~Turtlebot3Fake();
+  OroFake();
+  ~OroFake();
   bool init();
   bool update();
 
@@ -111,4 +111,4 @@ class Turtlebot3Fake
   void updateTF(geometry_msgs::TransformStamped& odom_tf);
 };
 
-#endif // TURTLEBOT3_FAKE_H_
+#endif // ORO_FAKE_H_

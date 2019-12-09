@@ -2,7 +2,7 @@
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
 cmake_minimum_required(VERSION 2.8.3)
-project(turtlebot3_fake)
+project(oro_fake)
 
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
   tf
-  turtlebot3_msgs
+  oro_msgs
 )
 
 ################################################################################
@@ -34,7 +34,7 @@ find_package(catkin REQUIRED COMPONENTS
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf turtlebot3_msgs
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf oro_msgs
 )
 
 ################################################################################
@@ -45,14 +45,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(turtlebot3_fake_node src/turtlebot3_fake.cpp)
-add_dependencies(turtlebot3_fake_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(turtlebot3_fake_node ${catkin_LIBRARIES})
+add_executable(oro_fake_node src/oro_fake.cpp)
+add_dependencies(oro_fake_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(oro_fake_node ${catkin_LIBRARIES})
 
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS turtlebot3_fake_node
+install(TARGETS oro_fake_node
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
