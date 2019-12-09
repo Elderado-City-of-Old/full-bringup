@@ -33,7 +33,7 @@
 
     <!-- Load model -->
     <include>
-      <uri>model://turtlebot3_square</uri>
+      <uri>model://oro_square</uri>
     </include>
 
     <model name='obstacle'>

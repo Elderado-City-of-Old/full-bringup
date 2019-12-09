@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='turtlebot3_square'>
+  <model name='oro_square'>
     <pose frame=''>0 0 0 0 -0 0</pose>
     <link name='Wall_0'>
       <collision name='Wall_0_Collision'>

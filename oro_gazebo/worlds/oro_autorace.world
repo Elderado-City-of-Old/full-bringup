@@ -8,22 +8,22 @@
     </scene>
 
     <include>
-      <uri>model://turtlebot3_autorace/course</uri>
+      <uri>model://oro_autorace/course</uri>
       <pose> 0 0 0 0 0 -1.54</pose>
     </include>
     
     <include>
-      <uri>model://turtlebot3_autorace/traffic_parking</uri>
+      <uri>model://oro_autorace/traffic_parking</uri>
       <pose> 1.84 1.27 0.13 0 0 -0.356</pose>
     </include>
     
     <include>
-      <uri>model://turtlebot3_autorace/traffic_tunnel</uri>
+      <uri>model://oro_autorace/traffic_tunnel</uri>
       <pose> -1.544 -0.08 0.125 0 0 0</pose>
     </include>
    
     <include>
-      <uri>model://turtlebot3_autorace/traffic_stop</uri>
+      <uri>model://oro_autorace/traffic_stop</uri>
        <pose> -2.05 0.65 0.125 0 -0 0</pose>
     </include>    
 
