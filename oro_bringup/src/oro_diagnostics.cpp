@@ -22,8 +22,8 @@
 #include <sensor_msgs/MagneticField.h>
 #include <sensor_msgs/LaserScan.h>
 #include <diagnostic_msgs/DiagnosticArray.h>
-#include <turtlebot3_msgs/SensorState.h>
-#include <turtlebot3_msgs/VersionInfo.h>
+#include <oro_msgs/SensorState.h>
+#include <oro_msgs/VersionInfo.h>
 #include <string>
 
 #define SOFTWARE_VERSION "1.1.0"
@@ -115,16 +115,16 @@ void LDSMsgCallback(const sensor_msgs::LaserScan::ConstPtr &msg)
   setLDSDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "Good Condition");
 }
 
-void sensorStateMsgCallback(const turtlebot3_msgs::SensorState::ConstPtr &msg)
+void sensorStateMsgCallback(const oro_msgs::SensorState::ConstPtr &msg)
 {
   if (msg->battery > 11.0)
     setBatteryDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "Good Condition");
   else
     setBatteryDiagnosis(diagnostic_msgs::DiagnosticStatus::WARN, "Charge!!! Charge!!!");
 
-  if (msg->button == turtlebot3_msgs::SensorState::BUTTON0)
+  if (msg->button == oro_msgs::SensorState::BUTTON0)
     setButtonDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "BUTTON 0 IS PUSHED");
-  else if (msg->button == turtlebot3_msgs::SensorState::BUTTON1)
+  else if (msg->button == oro_msgs::SensorState::BUTTON1)
     setButtonDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "BUTTON 1 IS PUSHED");
   else
     setButtonDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "Pushed Nothing");
@@ -135,7 +135,7 @@ void sensorStateMsgCallback(const turtlebot3_msgs::SensorState::ConstPtr &msg)
     setMotorDiagnosis(diagnostic_msgs::DiagnosticStatus::WARN, "Torque OFF");
 }
 
-void firmwareVersionMsgCallback(const turtlebot3_msgs::VersionInfo::ConstPtr &msg)
+void firmwareVersionMsgCallback(const oro_msgs::VersionInfo::ConstPtr &msg)
 {
   static bool check_version = false;
   std::string get_version[3];
@@ -154,19 +154,19 @@ void firmwareVersionMsgCallback(const turtlebot3_msgs::VersionInfo::ConstPtr &ms
       if (firmware_version.minor_number > FIRMWARE_VERSION_MINOR_NUMBER)
       {
         ROS_WARN("This firmware(v%s) isn't compatible with this software (v%s)", msg->firmware.data(), SOFTWARE_VERSION);
-        ROS_WARN("You can find how to update its in `FAQ` section(turtlebot3.robotis.com)");
+        ROS_WARN("You can find how to update its in `FAQ` section(oro.robotis.com)");
       }
     }
     else
     {
       ROS_WARN("This firmware(v%s) isn't compatible with this software (v%s)", msg->firmware.data(), SOFTWARE_VERSION);
-      ROS_WARN("You can find how to update its in `FAQ` section(turtlebot3.robotis.com)");
+      ROS_WARN("You can find how to update its in `FAQ` section(oro.robotis.com)");
     }
 
     check_version = true;
   }
   
-  turtlebot3_msgs::VersionInfo version;
+  oro_msgs::VersionInfo version;
 
   version.software = SOFTWARE_VERSION;
   version.hardware = HARDWARE_VERSION;
@@ -193,11 +193,11 @@ void msgPub()
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "turtlebot3_diagnostic");
+  ros::init(argc, argv, "oro_diagnostic");
   ros::NodeHandle nh;
 
   tb3_diagnostics_pub  = nh.advertise<diagnostic_msgs::DiagnosticArray>("diagnostics", 10);
-  tb3_version_info_pub = nh.advertise<turtlebot3_msgs::VersionInfo>("version_info", 10);
+  tb3_version_info_pub = nh.advertise<oro_msgs::VersionInfo>("version_info", 10);
 
   ros::Subscriber imu         = nh.subscribe("imu", 10, imuMsgCallback);
   ros::Subscriber lds         = nh.subscribe("scan", 10, LDSMsgCallback);

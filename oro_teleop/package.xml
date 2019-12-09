@@ -6,8 +6,8 @@
     Provides teleoperation using keyboard for Oro.
   </description>
   <license>BSD</license>
+  <maintainer email="teh6@rice.edu">Thomas</maintainer>
   <author>Thomas Herring</author>
-  <author email="teh6@rice.edu">Thomas Herring</author>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>rospy</depend>
   <depend>geometry_msgs</depend>

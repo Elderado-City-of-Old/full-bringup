@@ -2,7 +2,7 @@
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
 cmake_minimum_required(VERSION 2.8.3)
-project(turtlebot3_bringup)
+project(oro_bringup)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   diagnostic_msgs
-  turtlebot3_msgs
+  oro_msgs
 )
 
 ################################################################################
@@ -34,7 +34,7 @@ find_package(catkin REQUIRED COMPONENTS
 # Declare catkin specific configuration to be passed to dependent projects
 ################################################################################
 catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs diagnostic_msgs turtlebot3_msgs
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs diagnostic_msgs oro_msgs
 )
 
 ################################################################################
@@ -44,14 +44,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(turtlebot3_diagnostics src/turtlebot3_diagnostics.cpp)
-add_dependencies(turtlebot3_diagnostics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(turtlebot3_diagnostics ${catkin_LIBRARIES})
+add_executable(oro_diagnostics src/oro_diagnostics.cpp)
+add_dependencies(oro_diagnostics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(oro_diagnostics ${catkin_LIBRARIES})
 
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS turtlebot3_diagnostics
+install(TARGETS oro_diagnostics
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -64,7 +64,7 @@ install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(FILES 99-turtlebot3-cdc.rules
+install(FILES 99-oro-cdc.rules
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

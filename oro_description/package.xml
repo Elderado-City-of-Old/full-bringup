@@ -6,7 +6,7 @@
     3D models of the Oro for simulation and visualization.
   </description>
   <license>Apache 2.0</license>
-  <author email="teh6@rice.edu">Thomas Herring</author>
+  <maintainer email="teh6@rice.edu">Thomas</maintainer>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>urdf</depend>
   <depend>xacro</depend>
