@@ -196,8 +196,6 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "oro_diagnostic");
   ros::NodeHandle nh;
 
-  ROS_INFO("It's this guy");
-
   tb3_diagnostics_pub  = nh.advertise<diagnostic_msgs::DiagnosticArray>("diagnostics", 10);
   tb3_version_info_pub = nh.advertise<oro_msgs::VersionInfo>("version_info", 10);
 
