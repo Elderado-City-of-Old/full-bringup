@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="oro_new_origin">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0565332553903245 -0.01818707363211 -0.000350515629258258"
+        rpy="0 0 0" />
+      <mass
+        value="1.32433600289922" />
+      <inertia
+        ixx="0.00135553657024013"
+        ixy="-5.02179862659454E-08"
+        ixz="-1.92790642264766E-07"
+        iyy="0.00194080698723538"
+        iyz="-1.28466065345713E-06"
+        izz="0.000617550917743685" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_left">
+    <inertial>
+      <origin
+        xyz="-0.191373146208563 0.191627979962553 -0.0102248565002972"
+        rpy="0 0 0" />
+      <mass
+        value="2.93317977791768" />
+      <inertia
+        ixx="0.591677105407078"
+        ixy="0.00508189072575185"
+        ixz="0.000218459631374334"
+        iyy="0.0177051658578186"
+        iyz="0.000417347096482886"
+        izz="0.590430124482806" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/wheel_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.242519526797119 -0.170162162680993 -0.018480323531233"
+      rpy="0 0.149555140664513 3.13449781269223" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_right">
+    <inertial>
+      <origin
+        xyz="0.180128460968119 -0.461421788743113 -0.065436735321014"
+        rpy="0 0 0" />
+      <mass
+        value="2.93317977791768" />
+      <inertia
+        ixx="0.591450075310868"
+        ixy="0.00474088100537843"
+        ixz="-0.000528473410083437"
+        iyy="0.0177051658578186"
+        iyz="-0.00187718918606179"
+        izz="0.590657154579016" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/wheel_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.24060539870727 0.0996248558539564 -0.018480323531233"
+      rpy="0 -0.444631589877229 -0.00709484089756432" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="base_scan">
+    <inertial>
+      <origin
+        xyz="0.339117296317171 -0.0694870732556561 0.0489134189395805"
+        rpy="0 0 0" />
+      <mass
+        value="0.0530538694104073" />
+      <inertia
+        ixx="1.80721201932064E-05"
+        ixy="2.63817129316487E-08"
+        ixz="-4.80233485928702E-06"
+        iyy="3.5722095781217E-05"
+        iyz="1.90623882780558E-08"
+        izz="4.46705826810891E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/base_scan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/base_scan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_scan_joint"
+    type="fixed">
+    <origin
+      xyz="-0.29299616822181 -0.034903733333453 0.069469676468767"
+      rpy="1.5707963267949 0 -0.00709484089756434" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_scan" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="neck">
+    <inertial>
+      <origin
+        xyz="0.052622236352891 -0.294270662722272 -0.978909826024226"
+        rpy="0 0 0" />
+      <mass
+        value="1.10926754952808" />
+      <inertia
+        ixx="0.0564227541638391"
+        ixy="0.000397725514912617"
+        ixz="-9.04251073112561E-10"
+        iyy="0.000393891974635777"
+        iyz="3.53923737916946E-11"
+        izz="0.0564818854150741" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/neck.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_joint"
+    type="fixed">
+    <origin
+      xyz="-0.111522868965688 -0.223111765630108 0.978912848528942"
+      rpy="0 0 -0.00709484089756157" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="pan">
+    <inertial>
+      <origin
+        xyz="0.15751717603195 -1.03659644168177 -1.02811349063567"
+        rpy="0 0 0" />
+      <mass
+        value="0.0446711229185333" />
+      <inertia
+        ixx="1.241695503459E-05"
+        ixy="7.04455595291662E-08"
+        ixz="2.67966548083652E-09"
+        iyy="7.78189155207254E-06"
+        iyz="-1.82730204528818E-07"
+        izz="1.04151202907412E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/pan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/pan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pan_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0803690267279755 0.186890382040786 0.0492568279398251"
+      rpy="0 0 -0.00757105682660417" />
+    <parent
+      link="neck" />
+    <child
+      link="pan" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="tilt">
+    <inertial>
+      <origin
+        xyz="1.13505010487561 -0.157246322316439 1.0714547106689"
+        rpy="0 0 0" />
+      <mass
+        value="0.190333592269604" />
+      <inertia
+        ixx="0.000309952592690081"
+        ixy="2.6016464347998E-06"
+        ixz="5.81043779152446E-09"
+        iyy="0.000483708672807067"
+        iyz="-5.91087992609485E-06"
+        izz="0.000184246016919108" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/tilt.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/tilt.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tilt_joint"
+    type="continuous">
+    <origin
+      xyz="0.000250000000001249 0 0.0420800000000014"
+      rpy="-3.12696731241166 0 -1.5707963267949" />
+    <parent
+      link="pan" />
+    <child
+      link="tilt" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="depth_cam">
+    <inertial>
+      <origin
+        xyz="1.11904835568739 -1.07242829067043 -0.142861258716231"
+        rpy="0 0 0" />
+      <mass
+        value="0.153126621719674" />
+      <inertia
+        ixx="0.000377926901789772"
+        ixy="-4.10910927962612E-10"
+        ixz="-2.82294853200096E-08"
+        iyy="2.30115750503474E-05"
+        iyz="5.16071759213032E-06"
+        izz="0.000375772291042933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/depth_cam.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://oro_new_origin/meshes/depth_cam.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="depth_cam_joint"
+    type="fixed">
+    <origin
+      xyz="0.0874623622012928 0 0"
+      rpy="-1.57079632679489 0 0" />
+    <parent
+      link="tilt" />
+    <child
+      link="depth_cam" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
