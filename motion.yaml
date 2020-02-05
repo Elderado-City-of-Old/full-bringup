@@ -1,0 +1,14 @@
+joint:
+  names: [pan, tilt]
+motion:
+  names: [right, zero, left]
+  right:
+    step: [-3.14, 0.0]  # radian
+    time_from_start: 0.5  # sec
+  zero:
+    step: [0.0, 0.0]
+    time_from_start: 3.0
+  left:
+    step: [3.14, 0.0]
+    time_from_start: 0.5
+
