@@ -2,9 +2,9 @@
   <arg name="namespace"               default="dynamixel_workbench"/>
   <arg name="is_loop"               default="false"/>
 
-  <param name="$(arg namespace)/trajectory_info" value="./motion.yaml"/>
+  <param name="$(arg namespace)/trajectory_info" value="$(find oro_operators)/config/scan.yaml"/>
 
-  <node name="joint_operator" pkg="dynamixel_workbench_operators" type="joint_operator"
+  <node name="joint_operator" pkg="oro_operators" type="joint_operator"
         required="true" output="screen" ns="$(arg namespace)">
     <param name="is_loop" value="$(arg is_loop)"/>
   </node>
