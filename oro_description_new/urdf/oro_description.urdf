@@ -20,8 +20,8 @@
     <visual>
       <origin xyz="-0.064 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <!--<mesh filename="package://oro_description/meshes/bases/waffle_base.stl" scale="0.001 0.001 0.001"/>-->
-	<mesh filename="package://oro_description/meshes/base_link.STL" />
+	<mesh filename="package://oro_description/meshes/bases/waffle_base.stl" scale="0.001 0.001 0.001"/>
+	<!--<mesh filename="package://oro_description/meshes/base_link.STL" />-->
       </geometry>
       <material name="blue"/>
     </visual>
