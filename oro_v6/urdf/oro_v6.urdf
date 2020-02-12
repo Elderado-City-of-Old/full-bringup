@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--Author: Thomas Herring-->
 <robot name="oro" xmlns:xacro="http://ros.org/wiki/xacro">
+
     <xacro:include filename="$(find oro_v6)/urdf/common_properties.xacro" />
     <xacro:include filename="$(find oro_v6)/urdf/oro.gazebo.xacro" />
+    <xacro:include filename="$(find oro_v6)/urdf/oro.transmission.xacro" />
+
     <link name="base_footprint" />
     <link name="base_link">
         <origin xyz="-0.0592357018397241 -0.000351282404628683 0.0201575907136556" rpy="0 0 0" />
