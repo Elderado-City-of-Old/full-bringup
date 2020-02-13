@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: oro_v6
+    relative_path: urdf/oro_v6.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/oro.srdf
+  CONFIG:
+    author_name: Thomas Herring
+    author_email: teh6@rice.edu
+    generated_timestamp: 1581407809

@@ -58,8 +58,13 @@
     <material>Gazebo/Grey</material>
   </gazebo>
 
+  <!--TODO: Ensure that this is working-->
   <gazebo>
-    <plugin name="oro_controller" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/> 
+  </gazebo>
+
+  <gazebo>
+    <plugin name="oro_diff_controller" filename="libgazebo_ros_diff_drive.so">
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
