@@ -59,9 +59,12 @@
   </gazebo>
 
   <!--TODO: Ensure that this is working-->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/> 
-  </gazebo>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+	    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
 
   <gazebo>
     <plugin name="oro_diff_controller" filename="libgazebo_ros_diff_drive.so">

@@ -4,7 +4,6 @@
 
     <xacro:include filename="$(find oro_v6)/urdf/common_properties.xacro" />
     <xacro:include filename="$(find oro_v6)/urdf/oro.gazebo.xacro" />
-    <xacro:include filename="$(find oro_v6)/urdf/oro.transmission.xacro" />
 
     <link name="base_footprint" />
     <link name="base_link">
@@ -157,7 +156,7 @@
             </geometry>
         </collision>
     </link>
-    <joint name="depth_cam_joint" type="continuous">
+    <joint name="depth_cam_joint" type="fixed">
         <origin xyz="0 -0.00146986251421883 -0.14957997" rpy="3.14159265358979 0 1.5707963267949" />
         <parent link="tilt" />
         <child link="depth_cam" />
@@ -334,39 +333,34 @@
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
-    <transmission name="trans_depth_cam_joint">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="depth_cam_joint">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="depth_cam_joint_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
-    <transmission name="trans_wheel_right_joint">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="wheel_right_joint">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="wheel_right_joint_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
-    <transmission name="trans_wheel_left_joint">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="wheel_left_joint">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="wheel_left_joint_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
-    <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/</robotNamespace>
-        </plugin>
-    </gazebo>
+    <!--<transmission name="trans_depth_cam_joint">-->
+        <!--<type>transmission_interface/SimpleTransmission</type>-->
+        <!--<joint name="depth_cam_joint">-->
+            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+        <!--</joint>-->
+        <!--<actuator name="depth_cam_joint_motor">-->
+            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+            <!--<mechanicalReduction>1</mechanicalReduction>-->
+        <!--</actuator>-->
+    <!--</transmission>-->
+    <!--<transmission name="trans_wheel_right_joint">-->
+        <!--<type>transmission_interface/SimpleTransmission</type>-->
+        <!--<joint name="wheel_right_joint">-->
+            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+        <!--</joint>-->
+        <!--<actuator name="wheel_right_joint_motor">-->
+            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+            <!--<mechanicalReduction>1</mechanicalReduction>-->
+        <!--</actuator>-->
+    <!--</transmission>-->
+    <!--<transmission name="trans_wheel_left_joint">-->
+        <!--<type>transmission_interface/SimpleTransmission</type>-->
+        <!--<joint name="wheel_left_joint">-->
+            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+        <!--</joint>-->
+        <!--<actuator name="wheel_left_joint_motor">-->
+            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
+            <!--<mechanicalReduction>1</mechanicalReduction>-->
+        <!--</actuator>-->
+    <!--</transmission>-->
 </robot>

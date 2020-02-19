@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 
   <!-- GDB Debug Option -->
@@ -79,4 +80,7 @@
     <param name="planning_scene_monitor/publish_transforms_updates" value="$(arg publish_monitored_planning_scene)" />
   </node>
 
+ <group ns="move_group">
+    <rosparam command="load" file="$(find oro_moveit_config)/config/kinematics.yaml"/>
+  </group>
 </launch>

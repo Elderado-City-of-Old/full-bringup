@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 
   <!-- By default, we do not start a database (it can be large) -->
@@ -59,9 +60,9 @@
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
   <include file="$(find oro_moveit_config)/launch/moveit_rviz.launch">
-    <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
+    <!-- <arg name="config" value="true"/> -->
 
   <!-- If database loading was enabled, start mongodb as well -->
   <include file="$(find oro_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
