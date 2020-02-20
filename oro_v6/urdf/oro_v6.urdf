@@ -333,34 +333,34 @@
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
-    <!--<transmission name="trans_depth_cam_joint">-->
-        <!--<type>transmission_interface/SimpleTransmission</type>-->
-        <!--<joint name="depth_cam_joint">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-        <!--</joint>-->
-        <!--<actuator name="depth_cam_joint_motor">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-            <!--<mechanicalReduction>1</mechanicalReduction>-->
-        <!--</actuator>-->
-    <!--</transmission>-->
-    <!--<transmission name="trans_wheel_right_joint">-->
-        <!--<type>transmission_interface/SimpleTransmission</type>-->
-        <!--<joint name="wheel_right_joint">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-        <!--</joint>-->
-        <!--<actuator name="wheel_right_joint_motor">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-            <!--<mechanicalReduction>1</mechanicalReduction>-->
-        <!--</actuator>-->
-    <!--</transmission>-->
-    <!--<transmission name="trans_wheel_left_joint">-->
-        <!--<type>transmission_interface/SimpleTransmission</type>-->
-        <!--<joint name="wheel_left_joint">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-        <!--</joint>-->
-        <!--<actuator name="wheel_left_joint_motor">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-            <!--<mechanicalReduction>1</mechanicalReduction>-->
-        <!--</actuator>-->
-    <!--</transmission>-->
+    <transmission name="trans_depth_cam_joint">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="depth_cam_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="depth_cam_joint_motor">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+    </transmission>
+    <transmission name="trans_wheel_right_joint">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="wheel_right_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="wheel_right_joint_motor">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+    </transmission>
+    <transmission name="trans_wheel_left_joint">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="wheel_left_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="wheel_left_joint_motor">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+    </transmission>
 </robot>
