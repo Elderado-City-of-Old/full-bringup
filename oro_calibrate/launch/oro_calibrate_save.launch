@@ -1,5 +1,5 @@
 <launch>
-	<arg name="map file" default="$(find oro_calibration/maps"/>
+	#<arg name="map file" default="$(find oro_calibration/maps"/>
 
 	
 	<node pkg="map_server" name="map_server" type="map_server" args="$map_file"/>
