@@ -2,8 +2,8 @@
 <!--Author: Thomas Herring-->
 <robot name="oro" xmlns:xacro="http://ros.org/wiki/xacro">
 
+    <xacro:include filename="$(find oro_v6)/urdf/oro.gazebo" />
     <xacro:include filename="$(find oro_v6)/urdf/common_properties.xacro" />
-    <xacro:include filename="$(find oro_v6)/urdf/oro.gazebo.xacro" />
 
     <link name="base_footprint" />
     <link name="base_link">
@@ -77,7 +77,7 @@
 <inertial>
             <origin xyz="-2.50155840103294E-05 -3.07858331118488E-05 0.0205898386906647" rpy="0 0 0" />
             <mass value="0.0446711229185335" />
-            <inertia ixx="1.24180241554179E-05" ixy="-4.29119054419149E-13" ixz="2.4476376713091E-09" iyy="1.04151202907413E-05" iyz="-1.82749851584174E-07" izz="7.78082243124466E-06" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
 
         <visual>
@@ -107,7 +107,8 @@
 <inertial>
             <origin xyz="0.00118385527699938 0.0139616359862273 -0.0783421837132381" rpy="0 0 0" />
             <mass value="0.190333592129278" />
-            <inertia ixx="0.000184137194903989" ixy="-1.52842480239196E-06" ixz="6.62804385986339E-08" iyy="0.000483856390372872" iyz="5.06450642269179E-08" izz="0.000309913696954649" />
+            <!--<inertia ixx="0.000184137194903989" ixy="-1.52842480239196E-06" ixz="6.62804385986339E-08" iyy="0.000483856390372872" iyz="5.06450642269179E-08" izz="0.000309913696954649" />-->
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
 
         <visual>
@@ -137,7 +138,8 @@
 <inertial>
             <origin xyz="1.57606088716095E-05 4.46446457198904E-10 4.41076423673969E-06" rpy="0 0 0" />
             <mass value="0.153126621719673" />
-            <inertia ixx="0.000375847392851875" ixy="1.29137498226285E-13" ixz="-2.267576442511E-09" iyy="2.29360924151489E-05" iyz="1.98626115179079E-12" izz="0.000377927282615239" />
+            <!--<inertia ixx="0.000375847392851875" ixy="1.29137498226285E-13" ixz="-2.267576442511E-09" iyy="2.29360924151489E-05" iyz="1.98626115179079E-12" izz="0.000377927282615239" />-->
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
 
         <visual>
@@ -343,26 +345,26 @@
             <!--<mechanicalReduction>1</mechanicalReduction>-->
         <!--</actuator>-->
     <!--</transmission>-->
-    <!--<transmission name="trans_wheel_right_joint">-->
-        <!--<type>transmission_interface/SimpleTransmission</type>-->
-        <!--<joint name="wheel_right_joint">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-        <!--</joint>-->
-        <!--<actuator name="wheel_right_joint_motor">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-            <!--<mechanicalReduction>1</mechanicalReduction>-->
-        <!--</actuator>-->
-    <!--</transmission>-->
-    <!--<transmission name="trans_wheel_left_joint">-->
-        <!--<type>transmission_interface/SimpleTransmission</type>-->
-        <!--<joint name="wheel_left_joint">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-        <!--</joint>-->
-        <!--<actuator name="wheel_left_joint_motor">-->
-            <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>-->
-            <!--<mechanicalReduction>1</mechanicalReduction>-->
-        <!--</actuator>-->
-    <!--</transmission>-->
+    <transmission name="trans_wheel_right_joint">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="wheel_right_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="wheel_right_joint_motor">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+    </transmission>
+    <transmission name="trans_wheel_left_joint">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="wheel_left_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="wheel_left_joint_motor">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    <mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+    </transmission>
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/oro</robotNamespace>

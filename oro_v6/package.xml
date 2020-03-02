@@ -21,6 +21,7 @@ for oro_v6 robot</p>
   <depend>urdf</depend>
   <depend>xacro</depend>
   <export>
-    <architecture_independent />
+	  <gazebo_ros gazebo_media_path="${pwd}"/>
+	  <gazebo_ros gazebo_model_path="${pwd}/models"/>
   </export>
 </package>

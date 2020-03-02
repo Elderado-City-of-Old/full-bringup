@@ -31,5 +31,4 @@
   <build_depend>oro_v6</build_depend>
   <run_depend>oro_v6</run_depend>
 
-
 </package>

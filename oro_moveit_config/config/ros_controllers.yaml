@@ -1,5 +1,5 @@
 oro:
-        # MoveIt-specific simulation settings
+  # MoveIt-specific simulation settings
   moveit_sim_hw_interface:
     joint_model_group: controllers_initial_group_
     joint_model_group_pose: controllers_initial_pose_
@@ -24,7 +24,7 @@ oro:
   controller_list:
     []
   head_controller:
-    type: effort_controllers/JointPositionController
+    type: effort_controllers/JointTrajectoryController
     joints:
       - pan_joint
       - tilt_joint

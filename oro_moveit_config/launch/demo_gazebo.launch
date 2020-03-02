@@ -26,11 +26,12 @@
   <arg name="urdf_path" default="$(find oro_v6)/urdf/oro_v6.xacro"/>
 
   <!-- launch the gazebo simulator and spawn the robot -->
-  <include file="$(find oro_moveit_config)/launch/gazebo.launch" >
-    <arg name="paused" value="$(arg paused)"/>
-    <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
-    <arg name="urdf_path" value="$(arg urdf_path)"/>
-  </include>
+  <!--This brakes the launching-->
+  <!--<include file="$(find oro_moveit_config)/launch/gazebo.launch" >-->
+    <!--<arg name="paused" value="$(arg paused)"/>-->
+    <!--<arg name="gazebo_gui" value="$(arg gazebo_gui)"/>-->
+    <!--<arg name="urdf_path" value="$(arg urdf_path)"/>-->
+  <!--</include>-->
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find oro_moveit_config)/launch/planning_context.launch">
@@ -43,16 +44,17 @@
 
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="use_gui" value="$(arg use_gui)"/>
-    <rosparam param="source_list">[/joint_states]</rosparam>
+    <param name="use_gui" value="false"/>
+    <!--<param name="use_gui" value="$(arg use_gui)"/>-->
+    <!--<rosparam param="source_list">[/joint_states]</rosparam>-->
   </node>
 
   <!-- Given the published joint states, publish tf for the robot links -->
-  <!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />-->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-	respawn="false" output="screen">
-    <remap from="/joint_states" to="/oro/joint_states" />
-  </node>
+  <!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" respawn="true" output="screen" />-->
+  <!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"-->
+	<!--respawn="false" output="screen">-->
+    <!--<remap from="/joint_states" to="/oro/joint_states" />-->
+  <!--</node>-->
 
   <!-- Run the main MoveIt! executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find oro_moveit_config)/launch/move_group.launch">
