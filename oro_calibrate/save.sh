@@ -4,7 +4,7 @@
 
 if [ $# -eq 0 ]; then
   echo "No path for map saving provided, saving in current directory as map.yaml"
-  rosrun map_server map_saver -f ./map.yaml
+  rosrun map_server map_saver -f ./map
   exit 0
 else
   printf "Saving map at %s" $1
