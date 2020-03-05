@@ -28,9 +28,9 @@ DynamixelController::DynamixelController()
    wheel_radius_(0.0f),
    is_moving_(false)
 {
-  is_joint_state_topic_ = priv_node_handle_.param<bool>("use_joint_states_topic", true);
+  is_joint_state_topic_ = priv_node_handle_.param<bool>("use_joint_states_topic", false);
   is_cmd_vel_topic_ = priv_node_handle_.param<bool>("use_cmd_vel_topic", false);
-  use_moveit_ = priv_node_handle_.param<bool>("use_moveit", false);
+  use_moveit_ = priv_node_handle_.param<bool>("use_moveit", true);
 
   read_period_ = priv_node_handle_.param<double>("dxl_read_period", 0.010f);
   write_period_ = priv_node_handle_.param<double>("dxl_write_period", 0.010f);
