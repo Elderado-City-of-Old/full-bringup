@@ -1,4 +1,5 @@
 <launch>
+  <!-- TODO: Remove this "model" arguement since we don't have multiple types of bots. -->
   <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="x_pos" default="-3.0"/>
   <arg name="y_pos" default="1.0"/>
