@@ -1,5 +1,7 @@
 <launch>
   <!-- Arguments -->
+  
+  <!-- TODO: Remove this "model" arguement since we don't have multiple types of bots. -->
   <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="configuration_basename" default="oro_lds_2d.lua"/>
   <arg name="sensor_range" default="1.0"/>
