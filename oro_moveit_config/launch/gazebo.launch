@@ -13,12 +13,13 @@
     <!--<arg name="verbose" value="true"/>-->
   <!--</include>-->
 
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="urdf_path" default="$(find oro_v6)/urdf/oro_v6.xacro"/>
+  <arg name="controller_start_delay" default="6.0"/>
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -40,6 +41,10 @@
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model oro -x 0 -y 0 -z 0"
     respawn="false" output="screen" />
 
-  <!--<include file="$(find oro_moveit_config)/launch/ros_controllers.launch"/>-->
   <rosparam file="$(find oro_moveit_config)/config/ros_controllers.yaml" command="load"/>
+
+  <include file="$(find oro_moveit_config)/launch/ros_controllers.launch" />
+
+  <node name="unpause_gazebo" pkg="rosservice" type="rosservice"  args="call gazebo/unpause_physics" launch-prefix="bash -c 'sleep $(arg controller_start_delay); $0 $@' "/>
+  
 </launch>
