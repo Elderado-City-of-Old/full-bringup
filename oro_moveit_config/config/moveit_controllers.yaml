@@ -1,0 +1,9 @@
+  controller_list:
+    - name: head_controller
+      action_ns: follow_joint_trajectory
+      type: FollowJointTrajectory
+      joints:
+        - pan_joint
+        - tilt_joint
+
+

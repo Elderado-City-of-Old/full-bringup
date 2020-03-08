@@ -5,12 +5,14 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-	  output="screen" ns="/oro" args="joint_state_controller head_controller"/>
+    output="screen"  args="joint_state_controller head_controller"/>
+  <!--<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"-->
+	  <!--output="screen" ns="/oro" args="joint_state_controller head_controller"/>-->
 
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
 	respawn="false" output="screen">
-    <remap from="/joint_states" to="/oro/joint_states" />
+    <!--<remap from="/joint_states" to="/oro/joint_states" />-->
   </node>
 
 </launch>
