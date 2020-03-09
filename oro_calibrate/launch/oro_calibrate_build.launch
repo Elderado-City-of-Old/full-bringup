@@ -1,0 +1,13 @@
+<launch>
+        <!-- TODO: Remove this "model" arguement since we don't have multiple types of bots. -->
+	<arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
+
+	<include file ="$(find oro_slam)/launch/oro_slam.launch">
+		<arg name="slam_methods" default="gmapping"/>
+	</include>
+
+	<include file ="$(find oro_teleop)/launch/oro_teleop_key.launch">
+	</include>
+</launch>
+
+
